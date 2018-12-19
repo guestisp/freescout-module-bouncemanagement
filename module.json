@@ -1,0 +1,22 @@
+{
+    "name": "BounceManagement",
+    "alias": "bouncemanagement",
+    "description": "Bounce Management module",
+    "version": "1.0.0",
+    "detailsUrl": "",
+    "author": "GUEST.it s.r.l.",
+    "authorUrl": "https://www.guest.it",
+    "requiredAppVersion": "1.0.2",
+    "license": "AGPL-3.0",
+    "keywords": [],
+    "active": 0,
+    "order": 0,
+    "providers": [
+        "Modules\\BounceManagement\\Providers\\BounceManagementServiceProvider"
+    ],
+    "aliases": {},
+    "files": [
+        "start.php"
+    ],
+    "requires": []
+}
