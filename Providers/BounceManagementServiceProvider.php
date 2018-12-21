@@ -33,11 +33,11 @@ class BounceManagementServiceProvider extends ServiceProvider
      */
     public function hooks()
     {
-        \Eventy::addAction('mailboxes.update.view', function($mailbox) {
+        \Eventy::addAction('mailbox.update.after_ticket_status', function($mailbox) {
             echo \View::make('bouncemanagement::partials/mailbox_update_view', ['mailbox' => $mailbox])->render();
         }, 20);
 
-        \Eventy::addFilter('mailbox:fillable_fields', function($mailbox) {
+        \Eventy::addFilter('mailbox.fillable_fields', function($mailbox) {
             return ['bounce_action'];
         }, 20);
 
