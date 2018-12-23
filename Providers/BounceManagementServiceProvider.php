@@ -41,9 +41,9 @@ class BounceManagementServiceProvider extends ServiceProvider
             return ['bounce_action'];
         }, 20);
 
-        \Eventy::addFilter('fetch_emails.should_save_thread', function($obj) {
-            return ($obj->mailbox->bounce_action === \Modules\BounceManagement\Entities\BounceManagement::ACTION_IGNORE && $obj->is_bounce) ? false : true;
-        }, 20);
+        \Eventy::addFilter('fetch_emails.should_save_thread', function($foo, $array) {
+            return ($array['mailbox']->bounce_action === \Modules\BounceManagement\Entities\BounceManagement::ACTION_IGNORE && $array['is_bounce']) ? false : true;
+        }, 20, 2);
     }
 
     /**
